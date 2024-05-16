@@ -4,9 +4,10 @@
 [ext_resource type="PackedScene" uid="uid://cwvpw6jvy5iyy" path="res://art/mob.glb" id="2_xgl1p"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_smr3d"]
-size = Vector3(1.612, 0.485184, 1.83817)
+size = Vector3(2.08651, 0.530375, 1.96524)
 
 [node name="Mob" type="CharacterBody3D" groups=["mob"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.267512, 0)
 collision_layer = 2
 collision_mask = 0
 script = ExtResource("1_tpqro")
@@ -16,10 +17,11 @@ script = ExtResource("1_tpqro")
 [node name="Character" parent="Pivot" instance=ExtResource("2_xgl1p")]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00827026, 0.26088, -0.0570221)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000797123, 0.0831962, -0.12056)
 shape = SubResource("BoxShape3D_smr3d")
 
 [node name="VisibleOnScreenNotifier3D" type="VisibleOnScreenNotifier3D" parent="."]
-aabb = AABB(-1.16419, -0.960126, -1.92912, 2.32838, 1.92025, 3.85823)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.326511, 0)
+aabb = AABB(-1.16419, -0.640224, -1.92912, 2.32838, 1.28045, 3.85823)
 
 [connection signal="screen_exited" from="VisibleOnScreenNotifier3D" to="." method="_on_visible_on_screen_notifier_3d_screen_exited"]
